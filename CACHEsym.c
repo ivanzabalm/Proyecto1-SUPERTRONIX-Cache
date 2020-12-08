@@ -97,7 +97,7 @@ void comparator(FILE* f_memoria, char* RAM){
             
             // si es así, mostramos un acierto y la caché cargada
             
-            printf("\nT: %d, Acierto de CACHE, ADDR %04x ETQ %x linea %02x palabra %02x DATO %02x",proceso.tiempoglobal,addr,etq_addr,linea_addr,palabra_addr,RAM[addr]);
+            printf("\nT: %d, Acierto de CACHE, ADDR %04x ETQ %02x linea %02x palabra %02x DATO %02x",proceso.tiempoglobal,addr,etq_addr,linea_addr,palabra_addr,RAM[addr]);
             printf("\n");
 
             printCache();
@@ -109,14 +109,14 @@ void comparator(FILE* f_memoria, char* RAM){
             proceso.numfallos++;
 
             //mostramos el tiempo, número de fallos y datos de la addrección
-            printf("\nT: %d, Fallo de CACHE %d, ADDR %04x ETQ %x linea %02x palabra %02x bloque %02x",proceso.tiempoglobal,proceso.numfallos,addr,etq_addr,linea_addr,palabra_addr,bloq_addr);
+            printf("\nT: %d, Fallo de CACHE %d, ADDR %04x ETQ %02x linea %02x palabra %02x bloque %02x",proceso.tiempoglobal,proceso.numfallos,addr,etq_addr,linea_addr,palabra_addr,bloq_addr);
             
             //e incrementamos en 10 el tiempo global
             proceso.tiempoglobal += 10;
             
             //cargamos la addrección en su correspondiente línea de caché
             printf("\nCargando el bloque %02x en la linea %02x",bloq_addr,linea_addr);
-            printf("\nT: %d, Acierto de CACHE, ADDR %04x ETQ %x linea %02x palabra %02x DATO %02x",proceso.tiempoglobal,addr,etq_addr,linea_addr,palabra_addr,RAM[addr]);
+            printf("\nT: %d, Acierto de CACHE, ADDR %04x ETQ %02x linea %02x palabra %02x DATO %02x",proceso.tiempoglobal,addr,etq_addr,linea_addr,palabra_addr,RAM[addr]);
             
             proceso.t_linea_cache[linea_addr].ETQ = etq_addr;
             
@@ -138,7 +138,7 @@ void comparator(FILE* f_memoria, char* RAM){
         }
         
         //hacemos un sleep de 2 segundos y lo incrementamos en el tiempo global
-        sleep(1);
+        sleep(2);
         proceso.tiempoglobal += 2;
         
         //llamamos de nuevo a esta misma función para vargar la siguiente addrección
