@@ -198,7 +198,7 @@ int main(){
     
     // Lectura de fichero accesos_memoria.txt
     
-    f_ram = fopen("accesos_memoria.txt","r");
+    f_memoria = fopen("accesos_memoria.txt","r");
     
     if(f_memoria == NULL){
         printf("El archivo accesos_memoria.txt no se ha podido abrir\n");
